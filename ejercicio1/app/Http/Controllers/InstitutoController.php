@@ -8,7 +8,7 @@ class InstitutoController extends Controller
 {
     public function index()
     {
-        $nombreVisistante = 'Juan Pérez';
-        return view('bienvenido ', compact('nombreVisistante'));
+        $nombreVisitante = 'Juan Pérez';
+        return view('bienvenida', compact('nombreVisitante'));
     }
 }

@@ -1,1 +1,2 @@
-composer create-project laravel/laravel nombreProyecto
+1 - composer create-project laravel/laravel nombreProyecto
+2 - php artisan serve

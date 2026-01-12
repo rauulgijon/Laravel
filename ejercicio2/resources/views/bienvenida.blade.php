@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Instituto Teconológico</title>
+    <title>Biblioteca Virtual</title>
 </head>
 <body>
-    <h1>Bienvenido, {{ $nombreVisitante }}!</h1>
+    <h1>Bienvenido a {{ $nombreBiblioteca }}!</h1>
+
+    
 </body>
 </html>
