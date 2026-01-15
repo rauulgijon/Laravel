@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\HeroeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
 
-Route::get("/", [HeroeController::class, "index"]);
+
+
+Route::get('/', [HeroeController::class, 'create'])->name('heroes.create '); // 
+
+Route::post('/heroes', [HeroeController::class, 'store'])->name('heroes.store');
