@@ -22,6 +22,7 @@ class HeroeController extends Controller
         ]);
         // Almacenar los datos en la base de datos (lógica de almacenamiento no implementada aquí)
 
-        return view('heroes.exito',['Heroe: ' => $datos]);
+    // Corrected code in HeroeController.php
+    return view('heroes.exito', ['heroe' => $datos]);
     }
 }

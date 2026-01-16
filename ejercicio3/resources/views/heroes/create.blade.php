@@ -4,7 +4,7 @@
             <h2>Registro de Héroes</h2>
             
             <form method="POST" action="{{ route('heroes.store') }}">
-                
+                @csrf
                 <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
                 
