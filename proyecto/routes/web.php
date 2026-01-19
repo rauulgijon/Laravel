@@ -1,14 +1,13 @@
 <?php
 
-use App\Http\Controllers\ClubController;
-use App\Http\Controllers\ligaController;
-use App\Http\Controllers\JugadorController;
 use Illuminate\Support\Facades\Route;
+// Importante: La 'L' de LigaController debe ser mayúscula
+use App\Http\Controllers\LigaController; 
 
+Route::get('/', function () {
+    return view('ligas.create');
+});
 
-
-Route::get('/', [LigaController::class, 'create'])->name('liga.create '); 
-
-Route::post('/liga', [LigaController::class, 'store'])->name('liga.store');
-
-
+// Rutas corregidas: En plural ('ligas') y sin espacios al final
+Route::get('/ligas', [LigaController::class, 'create'])->name('ligas.create');
+Route::post('/ligas', [LigaController::class, 'store'])->name('ligas.store');
