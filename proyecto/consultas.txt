@@ -1,0 +1,15 @@
+php artisan tinker
+use App\Models\Estudiante;
+- Select * -> Estudiante::all();
+- Select con filtros -> Estudiante::select('id','nombre', 'curso') -> get();
+- create -> Estudiante::create([
+        'nombre' => 'Fulanito',
+        'email' => 'fulanito@gmail.com',
+        'curso' => 'DAW',
+        'anio' => 2026
+    ]);
+
+- delete -> Estudiante::destroy(6);
+- update -> $aux = Estudiante::where('email', 'fulanito@gmail.com') -> first();
+            $aux -> email = 'ful@gmail.com';
+            $aux -> save();
