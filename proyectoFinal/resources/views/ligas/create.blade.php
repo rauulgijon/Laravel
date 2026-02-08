@@ -7,38 +7,46 @@
 </head>
 <body class="container mt-5">
 
-    <h2>Nueva Liga</h2>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Nueva Liga</h3>
         </div>
-    @endif
+        <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-    <form method="POST" action="{{ route('ligas.store') }}">
-        @csrf  
-        
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre de la Liga:</label>
-            <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}" required>
+            <form method="POST" action="{{ route('ligas.store') }}">
+                @csrf  
+                
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre de la Liga:</label>
+                    <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="deporte" class="form-label">Deporte:</label>
+                    <input type="text" name="deporte" class="form-control" value="{{ old('deporte') }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="temporada" class="form-label">Temporada (Ej: 2023-2024):</label>
+                    <input type="text" name="temporada" class="form-control" value="{{ old('temporada') }}" required>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{{ route('menu') }}" class="btn btn-secondary">⬅ Volver al Menú</a>
+                    <button type="submit" class="btn btn-primary">Crear Liga</button>
+                </div>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label for="deporte" class="form-label">Deporte:</label>
-            <input type="text" name="deporte" class="form-control" value="{{ old('deporte') }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="temporada" class="form-label">Temporada (Ej: 2023-2024):</label>
-            <input type="text" name="temporada" class="form-control" value="{{ old('temporada') }}" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Crear Liga</button>
-    </form>
+    </div>
 
 </body>
 </html>

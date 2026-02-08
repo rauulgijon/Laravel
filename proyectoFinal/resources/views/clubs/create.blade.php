@@ -7,39 +7,46 @@
 </head>
 <body class="container mt-5">
 
-    <h2>Nuevo Club</h2>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h3 class="mb-0">Nuevo Club</h3>
         </div>
-    @endif
+        <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-    <form method="POST" action="{{ route('clubs.store') }}">
-        @csrf  
-        
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre del Club:</label>
-            <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}" required>
+            <form method="POST" action="{{ route('clubs.store') }}">
+                @csrf  
+                
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre del Club:</label>
+                    <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ciudad" class="form-label">Ciudad:</label>
+                    <input type="text" name="ciudad" class="form-control" value="{{ old('ciudad') }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoría (Ej: Primera, Segunda):</label>
+                    <input type="text" name="categoria" class="form-control" value="{{ old('categoria') }}" required>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{{ route('menu') }}" class="btn btn-secondary">⬅ Volver al Menú</a>
+                    <button type="submit" class="btn btn-success">Registrar Club</button>
+                </div>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label for="ciudad" class="form-label">Ciudad:</label>
-            <input type="text" name="ciudad" class="form-control" value="{{ old('ciudad') }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="categoria" class="form-label">Categoría (Ej: Primera, Segunda):</label>
-            <input type="text" name="categoria" class="form-control" value="{{ old('categoria') }}" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Registrar Club</button>
-        <a href="{{ url('/') }}" class="btn btn-secondary">Volver al inicio</a>
-    </form>
+    </div>
 
 </body>
 </html>
