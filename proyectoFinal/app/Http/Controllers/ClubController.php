@@ -1,30 +1,32 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Models\Club; 
+use App\Models\Club;
 
-class ClubController extends Controller
-{
-    public function create()
-    {
-        return view('clubs.create');
+class ClubController extends Controller {
+    public function index() {
+        return view('clubs.index', ['clubs' => Club::all()]);
+    }
+    public function create() { return view('clubs.create'); }
+    
+    public function store(Request $request) {
+        $datos = $request->validate(['nombre' => 'required', 'ciudad' => 'required', 'categoria' => 'required']);
+        Club::create($datos);
+        return redirect()->route('clubs.index')->with('success', 'Club creado');
     }
 
-    public function store(Request $request)
-    {
-        // 1. Validación
-        $datos = $request->validate([
-            'nombre'    => ['required', 'string', 'max:50'],
-            'ciudad'    => ['required', 'string', 'max:50'],
-            'categoria' => ['required', 'string', 'max:50'],
-        ]);
+    public function edit($id) {
+        return view('clubs.edit', ['club' => Club::findOrFail($id)]);
+    }
 
-        // 2. Guardar en BD
-        Club::create($datos);
+    public function update(Request $request, $id) {
+        $datos = $request->validate(['nombre' => 'required', 'ciudad' => 'required', 'categoria' => 'required']);
+        Club::findOrFail($id)->update($datos);
+        return redirect()->route('clubs.index')->with('success', 'Club actualizado');
+    }
 
-        // 3. Vista de éxito
-        return view('clubs.exito', ['club' => $datos]);
+    public function destroy($id) {
+        Club::findOrFail($id)->delete();
+        return redirect()->route('clubs.index')->with('success', 'Club eliminado');
     }
 }
