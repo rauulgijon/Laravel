@@ -20,7 +20,7 @@
 
         <div class="row g-4 justify-content-center">
             
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-4 col-lg-3">
                 <div class="card h-100 border-primary text-center p-3">
                     <div class="card-body">
                         <div class="icon">⚽</div>
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-4 col-lg-3">
                 <div class="card h-100 border-success text-center p-3">
                     <div class="card-body">
                         <div class="icon">🛡️</div>
@@ -42,24 +42,13 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-4 col-lg-3">
                 <div class="card h-100 border-warning text-center p-3">
                     <div class="card-body">
                         <div class="icon">🏃‍♂️</div>
                         <h3 class="card-title text-warning-emphasis">Jugadores</h3>
                         <p class="card-text">Plantillas, posiciones y dorsales.</p>
                         <a href="{{ route('jugadores.index') }}" class="btn btn-warning w-100">Ver Jugadores</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-danger text-center p-3">
-                    <div class="card-body">
-                        <div class="icon">🆚</div>
-                        <h3 class="card-title text-danger">Partidos</h3>
-                        <p class="card-text">Calendario y resultados de juegos.</p>
-                        <a href="{{ route('partidos.index') }}" class="btn btn-danger w-100">Ver Partidos</a>
                     </div>
                 </div>
             </div>

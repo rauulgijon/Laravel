@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
             ClubSeeder::class,
             LigaSeeder::class,
             JugadorSeeder::class,
-            PartidoSeeder::class,
         ]);
     }
 }
