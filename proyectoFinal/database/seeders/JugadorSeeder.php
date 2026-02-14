@@ -10,12 +10,10 @@ class JugadorSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Buscamos los Clubes para obtener sus IDs reales
         $madrid = Club::where('nombre', 'Real Madrid')->first();
         $barca = Club::where('nombre', 'FC Barcelona')->first();
         $valencia = Club::where('nombre', 'Valencia CF')->first();
 
-        // 2. Creamos los jugadores usando la relación
         Jugador::create([
             'nombre' => 'Vinicius Jr',
             'posicion' => 'Delantero',
