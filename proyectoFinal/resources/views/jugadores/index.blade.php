@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
-    <h2 class="mb-4 text-warning-emphasis">🏃‍♂️ Listado de Jugadores</h2>
+    <h2 class="mb-4 text-warning-emphasis">Listado de Jugadores</h2>
     @if(session('success')) <div class="alert alert-success">{{ session('success') }}</div> @endif
 
     <div class="d-flex justify-content-between mb-3">

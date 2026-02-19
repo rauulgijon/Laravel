@@ -7,7 +7,7 @@
 </head>
 <body class="container mt-5">
     <div class="card shadow border-success">
-        <div class="card-header bg-success text-white"><h3>✏️ Editar Club</h3></div>
+        <div class="card-header bg-success text-white"><h3>Editar Club</h3></div>
         <div class="card-body">
             <form method="POST" action="{{ route('clubs.update', $club->id) }}">
                 @csrf @method('PUT')

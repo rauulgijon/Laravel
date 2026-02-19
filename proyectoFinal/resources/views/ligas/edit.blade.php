@@ -7,7 +7,7 @@
 </head>
 <body class="container mt-5">
     <div class="card shadow">
-        <div class="card-header bg-warning"><h3>✏️ Editar Liga</h3></div>
+        <div class="card-header bg-warning"><h3>Editar Liga</h3></div>
         <div class="card-body">
             <form method="POST" action="{{ route('ligas.update', $liga->id) }}">
                 @csrf @method('PUT')

@@ -14,7 +14,7 @@
 
     <div class="container mt-5">
         <div class="text-center mb-5">
-            <h1 class="fw-bold text-primary">🏆 Gestión Liga Maestre</h1>
+            <h1 class="fw-bold text-primary">Gestión Liga Maestre</h1>
             <p class="text-muted">Panel de administración de competiciones deportivas</p>
         </div>
 
@@ -23,7 +23,6 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card h-100 border-primary text-center p-3">
                     <div class="card-body">
-                        <div class="icon">⚽</div>
                         <h3 class="card-title text-primary">Ligas</h3>
                         <p class="card-text">Gestionar competiciones y temporadas.</p>
                         <a href="{{ route('ligas.index') }}" class="btn btn-primary w-100">Ver Ligas</a>
@@ -34,7 +33,6 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card h-100 border-success text-center p-3">
                     <div class="card-body">
-                        <div class="icon">🛡️</div>
                         <h3 class="card-title text-success">Clubes</h3>
                         <p class="card-text">Administrar equipos y categorías.</p>
                         <a href="{{ route('clubs.index') }}" class="btn btn-success w-100">Ver Clubes</a>
@@ -45,7 +43,6 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card h-100 border-warning text-center p-3">
                     <div class="card-body">
-                        <div class="icon">🏃‍♂️</div>
                         <h3 class="card-title text-warning-emphasis">Jugadores</h3>
                         <p class="card-text">Plantillas, posiciones y dorsales.</p>
                         <a href="{{ route('jugadores.index') }}" class="btn btn-warning w-100">Ver Jugadores</a>
