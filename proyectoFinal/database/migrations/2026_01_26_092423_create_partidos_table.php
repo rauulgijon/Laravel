@@ -17,16 +17,16 @@ return new class extends Migration
             // Relación con Liga
             $table->foreignId('liga_id')->constrained('ligas')->onDelete('cascade');
 
-            // Relación Club Local (manual porque el nombre no es estándar)
+            // Relación Club Local 
             $table->unsignedBigInteger('club_local_id');
             $table->foreign('club_local_id')->references('id')->on('clubs');
 
-            // Relación Club Visitante (manual)
+            // Relación Club Visitante 
             $table->unsignedBigInteger('club_visitante_id');
             $table->foreign('club_visitante_id')->references('id')->on('clubs');
 
             $table->date('fecha');
-            $table->string('resultado')->nullable(); // Puede ser nulo
+            $table->string('resultado')->nullable(); 
             
             // Sin timestamps
         });

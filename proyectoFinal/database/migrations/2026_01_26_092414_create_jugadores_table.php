@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('posicion');
             $table->integer('dorsal');
             
-            // Relación con Clubs
-            // Usamos foreignId que crea automáticamente el BIGINT UNSIGNED
+            // Relación con Club (clave foránea)
             $table->foreignId('club_id')->constrained('clubs')->onDelete('cascade');
             
             // Sin timestamps
